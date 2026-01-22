@@ -1,0 +1,5 @@
+:local currentState [/interface ethernet get [find name="ether1"] running];
+:if ($currentState = false) do={:local botToken "123456789:ABCDefghijklmn_OPQRST-uvwxyz";:local chatId "987654321";
+:local message "uyari: ether1 calismiyor";
+:log warning "uyari: ether1 calismiyor";
+/tool fetch url=("https://api.telegram.org/bot" . $botToken . "/sendMessage?chat_id=" . $chatId . "&text=" . $message) keep-result=no;}
